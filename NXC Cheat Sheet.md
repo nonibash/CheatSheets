@@ -27,9 +27,9 @@ nxc smb 172.16.139.3 -u john -p 'lol123!'
 
 #NTLM:
 
-nxc smb dc01.ad.trilocor.local -u 'john' -H 3135834fa2e5dcdc4367de1c9d0784a3
+nxc smb dc01.rustykey.htb -u 'john' -H 3135834fa2e5dcdc4367de1c9d0784a3
 
-nxc smb dc01.ad.trilocor.local -u 'john' -H HASH:HASH
+nxc smb dc01.rustykey.htb -u 'john' -H HASH:HASH
 
 #Kerberos Ticket, requires a valid ticket to be present in klist:
 nxc smb dc.rustykey.htb -k --use-kcache
